@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+body{
+    /* position: relative; */
+    width: 0;
+    height: 0;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p,h1{
+    text-indent: inherit;
+    font-size: large;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+.container{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: aqua; */
+    height: 560px;
+    width: 580px;
+    transform-style: preserve-3d;
+}
+.stamp img{
+    float: right;
+    opacity: 20px;
+    height: 80px;
+    width: 80px;
+    margin-top: 40px;
+    margin-right: 40px;
+}
+.frontcard{
+    background-image: url(bg1.jpg);
+    top: 30px;
+    background-size: cover;
+    border-radius: 30px;
+    width: 100%;
+    height: 550px;
+    opacity: 1;
+}
+.content-front{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    font-weight: bold;
+}
+.backcard{
+position: absolute;
+top: 2px;
+  width: 0;
+  border-top: 270px solid transparent;
+  border-bottom: 270px solid transparent;
+  border-left:  290px solid transparent;
+  border-right: 290px solid transparent;
+  border-radius: 30px;
+  opacity: 0;
+
+}
+.paper{
+    position: absolute;
+    background-image: url(bg2.jpg);
+    width:  550px;
+    height: 520px;
+    left: -275px;
+    top:-255px;
+    border-radius: 30px;
+    
+}
+.cover{
+    position: absolute;
+    left:  -290px;
+    top: -265px;
+    border-radius: 30px;
+    border-top: 270px solid transparent;
+    border-bottom: 270px solid rosybrown;
+    border-left:  290px solid rosybrown;
+    border-right: 290px solid rosybrown;
+   
+}
+.cover-top{
+position: absolute;
+top: -265px;
+left: -290px;
+border-radius: 30px;
+border-top:     282px solid rgba(191, 241, 124);
+border-bottom:  270px solid transparent;
+border-left:    290px solid transparent;
+border-right:   290px solid transparent;
+transform-origin: top;
+}
+.frontcard:hover {
+    animation: flipings 2s forwards;
+transform: rotateX(360deg);
+opacity: 0;
+transition: 3s;
+}
+.backcard:hover{
+    
+    opacity: 1;
+}
+.backcard:hover .cover-top{
+    animation: coverOpen 3s forwards;
+}
+.backcard:hover .paper{
+   animation: paperOut 5s forwards;
+
+}
+
+@keyframes flipings {
+0%{transform: rotateX(0deg);}
+50%{transform: rotateX(360deg);}
+100%{opacity: 1;}    
+}
+@keyframes coverOpen{
+    0%{transform: rotateX(0);}
+    20%{transform: rotateX(36deg);}
+    80%{transform: rotateX(144deg);}
+    100%{transform: rotateX(180deg);z-index: -1;}
+}
+
+@keyframes paperOut {
+    0%{transform: translateY(0);}
+    20%{transform: translateY(0px);}
+    65%{transform: translateY(-1520px);}
+    100%{transform: translateY(10px);z-index: 1;}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
